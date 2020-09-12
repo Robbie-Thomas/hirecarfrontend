@@ -7,6 +7,7 @@
       <thead>
         <tr id="tpRow">
           <th>Vehicle Registration</th>
+          <th>Vehicle Type</th>
           <th>Make</th>
           <th>Model</th>
           <th>Fuel Type</th>
@@ -23,6 +24,7 @@
           v-on:click="clickList(vehicle)"
         >
           <td id="reg">{{vehicle.registration}}</td>
+          <td>{{vehicle.vehicleType}}</td>
           <td>{{vehicle.make}}</td>
           <td>{{vehicle.model}}</td>
           <td>{{vehicle.fuelType}}</td>
@@ -101,8 +103,8 @@ export default {
           this.vehicles.splice(index, 1);
           index--;
         }
-      document.getElementById("title").innerHTML = vehicle.make + " " + vehicle.model + " " + vehicle.registration;
-
+        document.getElementById("title").innerHTML =
+          vehicle.make + " " + vehicle.model + " " + vehicle.registration;
       }
       document.getElementById("datepickers").style.visibility = "visible";
       document.getElementById("showHiredBtn").style.visibility = "hidden";
